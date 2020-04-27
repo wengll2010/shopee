@@ -1,0 +1,14 @@
+{
+    "debug": true,
+    "minStep": 30,
+    "http": {
+        "enabled": true,
+        "listen": "0.0.0.0:6060"
+    },
+     "mysqlmaster": {
+ 	"database": "root:wll123@tcp(127.0.0.1:3306)/d_user?charset=utf8&interpolateParams=true",
+    	"hosts": "",
+    	"maxConns": 20,
+    	"maxIdle": 100
+    }
+}

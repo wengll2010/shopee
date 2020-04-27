@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+option go_package = ".;proto";
+//option java_multiple_files = true;
+//option java_package = "io.grpc.examples.helloworld";
+//option java_outer_classname = "HelloWorldProto";
+
+package proto;
+
+service User {
+  rpc LoginUser (LoginUserRequest) returns (LoginUserReply) {}
+  rpc GetUser (GetUserRequest) returns (GetUserReply) {}
+  rpc UpdateUser (UpdateUserRequest) returns (UpdateUserReply) {}
+}
+
+// 登录
+message LoginUserRequest {
+  string name     = 1;
+  string password = 2;
+}
+
+message LoginUserReply {
+  int32  retcode  = 1;
+  string errmsg   = 2;
+  string token    = 3;
+}
+
+// 获取用户信息
+message GetUserRequest {
+  string name     = 1;
+  string token    = 2;
+}
+
+message GetUserReply {
+  int32  retcode  = 1;
+  string errmsg   = 2;
+  string name     = 3;
+  string password = 4;
+  string nick     = 5;
+  string picture  = 6;
+  int32  regtime  = 7;
+}
+
+// 修改用户信息
+message UpdateUserRequest {
+  string name     = 1;
+  string token    = 2;
+  string nick     = 3;
+  string picture  = 4;
+}
+
+message UpdateUserReply {
+  int32  retcode  = 1;
+  string errmsg   = 2;
+}

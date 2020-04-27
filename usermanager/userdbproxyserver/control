@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nohup ./userdbproxyserver -c cfg.example.json &> /root/datalog/userdbproxyserver/userdbproxyserver.log &

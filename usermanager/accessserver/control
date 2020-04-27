@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nohup ./accessserver -c cfg.example.json &> /root/datalog/accessserver/accessserver.log &

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nohup ./userserver -c cfg.example.json &> /root/datalog/userserver/userserver.log &

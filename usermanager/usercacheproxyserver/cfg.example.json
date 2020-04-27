@@ -1,0 +1,12 @@
+{
+    "debug": true,
+    "minStep": 30,
+    "http": {
+        "enabled": true,
+        "listen": "0.0.0.0:6080"
+    },
+    "redismaster": {
+	"addr": "wll123@127.0.0.1:6379",
+        "maxIdle": 5
+    }
+}

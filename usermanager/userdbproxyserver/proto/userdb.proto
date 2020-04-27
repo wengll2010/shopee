@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+option go_package = ".;proto";
+package proto;
+
+service DBUser {
+  rpc AddDBUser (AddDBUserRequest) returns (AddDBUserReply) {}
+  rpc GetDBUser (GetDBUserRequest) returns (GetDBUserReply) {}
+  rpc UpdateDBUser (UpdateDBUserRequest) returns (UpdateDBUserReply) {}
+}
+
+// 添加用户
+message AddDBUserRequest {
+  string name     = 1;
+  string password = 2;
+  string nick     = 3;
+  string picture  = 4;
+  int32  regtime  = 5;
+
+}
+
+message AddDBUserReply {
+  int32  retcode  = 1;
+  string errmsg   = 2;
+}
+
+// 查询用户
+message GetDBUserRequest {
+  string name     = 1;
+}
+
+message GetDBUserReply {
+  int32  retcode  = 1;
+  string errmsg   = 2;
+  string name     = 3;
+  string password = 4;
+  string nick     = 5;
+  string picture  = 6;
+  int32  regtime  = 7;
+}
+
+// 修改用户
+message UpdateDBUserRequest {
+  string name     = 1;
+  string nick     = 2;
+  string picture  = 3;
+}
+
+message UpdateDBUserReply {
+  int32  retcode  = 1;
+  string errmsg   = 2;
+}

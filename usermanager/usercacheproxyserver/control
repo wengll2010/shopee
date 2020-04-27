@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nohup ./usercacheproxyserver -c cfg.example.json &> /root/datalog/usercacheproxyserver/usercacheproxyserver.log &

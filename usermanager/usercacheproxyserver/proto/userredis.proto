@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option go_package = ".;proto";
+package proto;
+
+service CacheUser {
+  rpc SetUserToken (SetUserTokenRequest) returns (SetUserTokenReply) {}
+  rpc GetUserToken (GetUserTokenRequest) returns (GetUserTokenReply) {}
+}
+
+// 设置用户token
+message SetUserTokenRequest {
+  string name       = 1;
+  string token      = 2;
+  int32  expiretime = 3;
+
+}
+
+message SetUserTokenReply {
+  int32  retcode    = 1;
+  string errmsg     = 2;
+}
+
+// 查询用户token
+message GetUserTokenRequest {
+  string name       = 1;
+  string token      = 2;
+}
+
+message GetUserTokenReply {
+  int32  retcode    = 1;
+  string errmsg     = 2;
+  string name       = 3;
+  string token      = 4;
+  int32  expiretime = 5;
+}
